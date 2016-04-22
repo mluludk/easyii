@@ -13,7 +13,7 @@ class Carousel extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_carousel';
+        return 'store.easyii_carousel';
     }
 
     public function rules()

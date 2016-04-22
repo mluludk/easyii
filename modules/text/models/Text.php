@@ -10,7 +10,7 @@ class Text extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_texts';
+        return 'store.easyii_texts';
     }
 
     public function rules()

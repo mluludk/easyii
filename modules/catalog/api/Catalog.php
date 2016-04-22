@@ -111,7 +111,11 @@ class Catalog extends \yii\easyii\components\API
     {
         if(!isset($this->_item[$id_slug])) {
             $this->_item[$id_slug] = $this->findItem($id_slug);
+            return $this->_item[$id_slug];
         }
+     //   else
+    //        return 'aa';
+     //   return $this->_item;
         return $this->_item[$id_slug];
     }
 
@@ -182,17 +186,29 @@ class Catalog extends \yii\easyii\components\API
 
     private function findCategory($id_slug)
     {
-        $category = Category::find()->where(['or', 'category_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
-
+        //asline $category = Category::find()->where(['or', 'category_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        if (is_numeric($id_slug))
+            $category = Category::find()->where('category_id=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        else
+            $category = Category::find()->where('slug=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
         return $category ? new CategoryObject($category) : null;
     }
 
     private function findItem($id_slug)
     {
+        if (is_numeric($id_slug))
+            $item = Item::find()->where('item_id=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        else
+            $item = Item::find()->where('slug=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+
+/* asline
         if(!($item = Item::find()->where(['or', 'item_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one())){
             return null;
         }
-
-        return new ItemObject($item);
+*/
+        if (!$item)
+            return null;
+        else
+            return new ItemObject($item);
     }
 }

@@ -7,7 +7,7 @@ class History extends \yii\easyii\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_subscribe_history';
+        return 'store.easyii_subscribe_history';
     }
 
     public function rules()

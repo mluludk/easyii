@@ -9,7 +9,7 @@ class Good extends \yii\easyii\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_shopcart_goods';
+        return 'store.easyii_shopcart_goods';
     }
 
     public function rules()

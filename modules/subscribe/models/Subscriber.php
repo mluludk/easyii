@@ -9,7 +9,7 @@ class Subscriber extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_subscribe_subscribers';
+        return 'store.easyii_subscribe_subscribers';
     }
 
     public function rules()

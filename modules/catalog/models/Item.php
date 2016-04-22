@@ -13,7 +13,7 @@ class Item extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_catalog_items';
+        return 'store.easyii_catalog_items';
     }
 
     public function rules()

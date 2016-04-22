@@ -23,7 +23,7 @@ class Order extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_shopcart_orders';
+        return 'store.easyii_shopcart_orders';
     }
 
     public function rules()

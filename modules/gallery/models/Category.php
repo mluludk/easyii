@@ -7,7 +7,7 @@ class Category extends \yii\easyii\components\CategoryModel
 {
     public static function tableName()
     {
-        return 'easyii_gallery_categories';
+        return 'store.easyii_gallery_categories';
     }
 
     public function getPhotos()

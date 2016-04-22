@@ -15,7 +15,7 @@ class News extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_news';
+        return 'store.easyii_news';
     }
 
     public function rules()

@@ -12,6 +12,6 @@ class ItemData extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_catalog_item_data';
+        return 'store.easyii_catalog_item_data';
     }
 }

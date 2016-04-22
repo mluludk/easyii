@@ -146,14 +146,21 @@ class Article extends \yii\easyii\components\API
 
     private function findCategory($id_slug)
     {
-        $category = Category::find()->where(['or', 'category_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        if (is_integer($id_slug))
+            $category = Category::find()->where('category_id=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        else
+            $category = Category::find()->where('slug=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
 
         return $category ? new CategoryObject($category) : null;
     }
 
     private function findItem($id_slug)
     {
-        $article = Item::find()->where(['or', 'item_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        //asline         $article = Item::find()->where(['or', 'item_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        if (is_integer($id_slug))
+            $article = Item::find()->where('item_id=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
+        else
+            $article = Item::find()->where('slug=:id_slug', [':id_slug' => $id_slug])->status(Item::STATUS_ON)->one();
         if($article) {
             $article->updateCounters(['views' => 1]);
             return new ArticleObject($article);

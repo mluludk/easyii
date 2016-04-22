@@ -8,7 +8,7 @@ class Page extends \yii\easyii\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_pages';
+        return 'store.easyii_pages';
     }
 
     public function rules()

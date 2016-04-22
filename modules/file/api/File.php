@@ -91,7 +91,11 @@ class File extends \yii\easyii\components\API
 
     private function findFile($id_slug)
     {
-        $file = FileModel::find()->where(['or', 'file_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->one();
+        //aslinya $file = FileModel::find()->where(['or', 'file_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->one();
+        if (is_integer($id_slug))
+            $file = FileModel::find()->where('file_id=:id_slug', [':id_slug' => $id_slug])->one();
+        else
+            $file = FileModel::find()->where('slug=:id_slug', [':id_slug' => $id_slug])->one();
 
         return $file ? new FileObject($file) : null;
     }

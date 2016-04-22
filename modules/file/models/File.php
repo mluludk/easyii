@@ -10,7 +10,7 @@ class File extends \yii\easyii\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_files';
+        return 'store.easyii_files';
     }
 
     public function rules()

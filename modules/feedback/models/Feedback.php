@@ -21,7 +21,7 @@ class Feedback extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_feedback';
+        return 'store.easyii_feedback';
     }
 
     public function rules()

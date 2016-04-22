@@ -13,7 +13,7 @@ class Category extends \yii\easyii\components\CategoryModel
 
     public static function tableName()
     {
-        return 'easyii_catalog_categories';
+        return 'store.easyii_catalog_categories';
     }
 
     public function beforeSave($insert)

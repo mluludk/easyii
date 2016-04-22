@@ -14,7 +14,7 @@ class Faq extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_faq';
+        return 'store.easyii_faq';
     }
 
     public function rules()

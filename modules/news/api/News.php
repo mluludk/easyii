@@ -118,7 +118,12 @@ class News extends \yii\easyii\components\API
 
     private function findNews($id_slug)
     {
-        $news = NewsModel::find()->where(['or', 'news_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(NewsModel::STATUS_ON)->one();
+        //asline         $news = NewsModel::find()->where(['or', 'news_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(NewsModel::STATUS_ON)->one();
+
+        if (is_integer($id_slug))
+            $news = NewsModel::find()->where('news_id=:id_slug', [':id_slug' => $id_slug])->status(NewsModel::STATUS_ON)->one();
+        else
+            $news = NewsModel::find()->where('slug=:id_slug', [':id_slug' => $id_slug])->status(NewsModel::STATUS_ON)->one();
         if($news) {
             $news->updateCounters(['views' => 1]);
             return new NewsObject($news);
