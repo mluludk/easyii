@@ -1,5 +1,5 @@
 {
-    "name": "noumo/easyii",
+    "name": "mluludk/easyii",
     "version": "dev-master",
     "description": "Easy CMS based on Yii2 Framework - Development package",
     "keywords": ["easyii"],
@@ -9,8 +9,8 @@
     "minimum-stability": "dev",
     "support": {
         "wiki": "http://easyiicms.com/docs",
-        "source": "https://github.com/noumo/easyii.git",
-        "issues": "https://github.com/noumo/easyii/issues"
+        "source": "https://github.com/mluludk/easyii.git",
+        "issues": "https://github.com/mluludk/easyii/issues"
     },
     "authors": [
         {
