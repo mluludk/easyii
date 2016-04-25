@@ -65,9 +65,10 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
 
     public function getInstalled()
     {
+        return true;
         if ($this->_installed === null) {
             try {
-                $this->_installed = Yii::$app->db->createCommand("SHOW TABLES LIKE 'easyii_%'")->query()->count() > 0 ? true : false;
+                $this->_installed = Yii::$app->db->createCommand("SHOW TABLES LIKE 'store.easyii_%'")->query()->count() > 0 ? true : false;
             } catch (\Exception $e) {
                 $this->_installed = false;
             }

@@ -1,3 +1,5 @@
 .idea
 vendor
 Thumbs.db
+composer.json
+composer.lock
