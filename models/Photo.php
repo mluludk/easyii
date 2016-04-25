@@ -12,7 +12,7 @@ class Photo extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_photos';
+        return 'store.easyii_photos';
     }
 
     public function rules()

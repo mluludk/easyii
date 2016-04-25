@@ -15,7 +15,7 @@ class LoginForm extends ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_loginform';
+        return 'store.easyii_loginform';
     }
 
     public function rules()

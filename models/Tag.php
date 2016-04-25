@@ -5,7 +5,7 @@ class Tag extends \yii\easyii\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_tags';
+        return 'store.easyii_tags';
     }
 
     public function rules()

@@ -18,7 +18,7 @@ class Setting extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_settings';
+        return 'store.easyii_settings';
     }
 
     public function rules()

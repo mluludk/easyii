@@ -16,7 +16,7 @@ class Module extends \yii\easyii\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_modules';
+        return 'store.easyii_modules';
     }
 
     public function rules()

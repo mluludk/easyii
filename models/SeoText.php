@@ -8,7 +8,7 @@ class SeoText extends \yii\easyii\components\ActiveRecord
 {
     public static function tableName()
     {
-        return 'easyii_seotext';
+        return 'store.easyii_seotext';
     }
 
     public function rules()
